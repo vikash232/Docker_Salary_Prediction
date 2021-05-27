@@ -1,0 +1,36 @@
+# first we need to launch one os whether on local system or on cloud as a instance
+# then we need to install docker
+
+yum install docker -y
+
+# we need to start the docker service as well
+
+systemctl start docker
+
+# now we have to pull image from dockerhub so i have pulled centos image you can pull any one 
+
+docker pull centos
+
+# now i have to run one os using this centos image
+
+docker run -it --name salary_prediction centos
+
+# now i have to install python3 and also need to install dependent libraries
+
+yum install python3 -y
+pip3 install pandas numpy scikit-learn
+
+# now as i created my ml_model and upload it on github so we have clone it on our os using git for that i have to install git as well
+
+yum install git -y
+git clone https://github.com/vikash232/Docker_Salary_Prediction.git
+
+# now we need to go on this directory
+cd Docker_Salary_Prediction
+
+# Here we just need to run our model 
+
+python3 SalaryPrediction.py
+
+
+#Hope you guys find it helpful
